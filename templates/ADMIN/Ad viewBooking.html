@@ -1,0 +1,111 @@
+{#{% extends 'ADMIN/admin view.html' %}#}
+{#{% block body %}#}
+{##}
+{##}
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Booking</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="">#}
+{#  <div align="center">#}
+{#    <table width="1088" height="255" border="1">#}
+{#      <tr>#}
+{##}
+{#        <td width="178" height="36"><div align="center">Sl no </div></td>#}
+{#        <td width="180"><div align="center">Patients name </div></td>#}
+{#        <td width="181"><div align="center">Place</div></td>#}
+{#        <td width="185"><div align="center">Phone</div></td>#}
+{#        <td width="162"><div align="center">Date</div></td>#}
+{#        <td width="162"><div align="center">Time</div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#           {% for i in ob %}#}
+{#        <td>{{ forloop.counter }}</td>#}
+{#        <td>{{ i.USER.name  }}</td>#}
+{#        <td>{{ i.USER.place }}</td>#}
+{#        <td>{{ i.USER.phone }}</td>#}
+{#        <td>{{ i.SCHEDULE.date }}</td>#}
+{#        <td>{{ i.SCHEDULE.fromtime }}- {{ i.SCHEDULE.totime }}</td>#}
+{#      </tr>#}
+{#        {% endfor %}#}
+{#      </table>#}
+{#  </div>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+
+
+
+{% extends 'ADMIN/admin view.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .table th, .table td {
+      text-align: center;
+      vertical-align: middle;
+    }
+    .form-container {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center form-container">
+      <div class="col-md-6">
+{#        <form id="form1" name="form1" method="post" action="" class="form-inline justify-content-center">#}
+{#          <div class="form-group mx-sm-3 mb-2">#}
+{#            <label for="textfield" class="sr-only">Name</label>#}
+{#            <input type="text" name="textfield" class="form-control" placeholder="Patient Name">#}
+{#          </div>#}
+{#          <button type="submit" name="Submit" class="btn btn-primary mb-2">Go</button>#}
+{#        </form>#}
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th>Sl No</th>
+            <th>Patient's Name</th>
+            <th>Place</th>
+            <th>Phone</th>
+            <th>Date</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in ob %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ i.USER.name }}</td>
+            <td>{{ i.USER.place }}</td>
+            <td>{{ i.USER.phone }}</td>
+            <td>{{ i.SCHEDULE.date }}</td>
+            <td>{{ i.SCHEDULE.fromtime }} - {{ i.SCHEDULE.totime }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Include Bootstrap JS (optional) -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+{% endblock %}
+

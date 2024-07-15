@@ -1,0 +1,107 @@
+{#{% extends 'ADMIN/admin view.html' %}#}
+{#{% block body %}#}
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="">#}
+{#  <div align="center">#}
+{#    <table width="588" height="272" border="1">#}
+{##}
+{#      <tr>#}
+{#        <td height="46" colspan="3"><div align="center">#}
+{#          <label>#}
+{#          Name#}
+{#          <input type="text" name="textfield" />#}
+{#          </label>#}
+{#          <label>#}
+{#          <input type="submit" name="Submit" value="Go" />#}
+{#          </label>#}
+{#        </div>          <div align="center"></div>          <div align="center"></div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td width="140" height="67"><div align="center">Doc ID</div></td>#}
+{#        <td width="249"><div align="center">Doctor Name </div></td>#}
+{#        <td width="177"><div align="center">Count</div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td>&nbsp;</td>#}
+{#        <td>&nbsp;</td>#}
+{#        <td><div align="center"><a href="#">View</a></div></td>#}
+{#      </tr>#}
+{#      </table>#}
+{#  </div>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+
+
+
+
+
+
+{% extends 'ADMIN/admin view.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Search</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .table th, .table td {
+      text-align: center;
+      vertical-align: middle;
+    }
+    .form-container {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center form-container">
+      <div class="col-md-6">
+        <form id="form1" name="form1" method="post" action="" class="form-inline justify-content-center">
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="textfield" class="sr-only">Name</label>
+            <input type="text" name="textfield" class="form-control" placeholder="Doctor Name">
+          </div>
+          <button type="submit" name="Submit" class="btn btn-primary mb-2">Go</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th>Doc ID</th>
+            <th>Doctor Name</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><a href="#">View</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Include Bootstrap JS (optional) -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+{% endblock %}
+

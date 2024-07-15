@@ -1,0 +1,53 @@
+{% extends 'USER/user home.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>view doctor</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/user_searchDoctor">
+  <div align="center">
+    <table width="825" height="248" border="1">
+      <tr>
+        <td height="42" colspan="7"><label>
+          <div align="center">
+            Name
+            <input type="text" name="textfield" />
+            <input type="submit" name="Submit" value="Go" />
+          </div>
+        </label></td>
+      </tr>
+      <tr>
+        <td width="66" height="40"><div align="center">Sl No </div></td>
+        <td width="128"><div align="center">Name</div></td>
+        <td width="124"><div align="center">Image</div></td>
+        <td width="120"><div align="center">Designation</div></td>
+        <td width="119"><div align="center">Experience</div></td>
+        <td width="111"><div align="center">Address</div></td>
+        <td width="111"><div align="center">BOOK</div></td>
+      </tr>
+      <tr>
+          {% for i in ai %}
+
+
+
+        <td>&nbsp;{{ forloop.counter }}</td>
+        <td>&nbsp;{{ i.name }}</td>
+        <td>&nbsp;<img src="{{ i.image.url }}" height="100" width="150"></td>
+        <td>&nbsp;{{ i.Designation }}</td>
+        <td>&nbsp;{{ i.experience }}</td>
+        <td>&nbsp;{{ i.place }}<br />
+          {{ i.post }}<br />
+        {{ i.pin }}</td>
+        <td><a href="/user_bookDoctor/{{ i.id }}">View Schedule</a></td>
+      </tr>
+        {% endfor %}
+      </table>
+  </div>
+</form>
+</body>
+{% endblock %}

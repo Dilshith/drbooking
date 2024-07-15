@@ -1,0 +1,94 @@
+{#{% extends 'DOCTOR/doctor home.html' %}#}
+{#{% block body %}#}
+{##}
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form action="/doctor_uploadPrescriptionCode" method="post" enctype="multipart/form-data" name="form1" id="form1">#}
+{#  <div align="center">#}
+{#    <table width="499" height="270" border="1">#}
+{#      <tr>#}
+{#        <td width="187" height="84"><div align="center">Prescription</div></td>#}
+{#        <td width="296"><div align="center">#}
+{#          <label>#}
+{#          <input type="file" name="file" />#}
+{#          </label>#}
+{#        </div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td height="88"><div align="center">Findings</div></td>#}
+{#        <td height="88"><div align="center">#}
+{#          <label>#}
+{#          <textarea name="textarea"></textarea>#}
+{#          </label>#}
+{#        </div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td height="88" colspan="2"><p align="center">#}
+{#          <label>#}
+{#          <input type="submit" name="Submit" value="Submit" />#}
+{#          </label>#}
+{#        </p>          <div align="center"></div></td>#}
+{#      </tr>#}
+{#      </table>#}
+{#  </div>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+
+{% extends 'DOCTOR/doctor home.html' %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Prescription</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom CSS for specific styling */
+    .form-container {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="form-container">
+      <form action="/doctor_uploadPrescriptionCode" method="post" enctype="multipart/form-data" name="form1" id="form1">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="file">Prescription</label>
+                  <input type="file" class="form-control-file" id="file" name="file">
+                </div>
+                <div class="form-group">
+                  <label for="textarea">Findings</label>
+                  <textarea class="form-control" id="textarea" name="textarea" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+{% endblock %}
+

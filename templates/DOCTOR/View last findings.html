@@ -1,0 +1,81 @@
+{#{% extends 'DOCTOR/doctor home.html' %}#}
+{#{% block body %}#}
+{##}
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">#}
+{#  <div align="center">#}
+{#    <table width="499" height="235" border="1">#}
+{#      <tr>#}
+{#        <td width="241" height="59"><div align="center">Image</div></td>#}
+{#        <td width="242"><div align="center">Findings</div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#          {% for foo in ac %}#}
+{##}
+{##}
+{##}
+{#        <td>&nbsp;<img src=" {{ foo.image.url }}" height = "100" width = "150"></td>#}
+{#        <td>&nbsp;{{ foo.notes }}</td>#}
+{#      </tr>#}
+{#           {% endfor %}#}
+{#      </table>#}
+{#  </div>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+
+
+{% extends 'DOCTOR/doctor home.html' %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Findings</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom CSS for specific styling */
+    .table-container {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="table-container">
+      <table class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Findings</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for foo in ac %}
+          <tr>
+            <td><img src="{{ foo.image.url }}" height="100" width="150" class="img-fluid" alt="Image"></td>
+            <td>{{ foo.notes }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,133 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="/logincode">#}
+{#  #}
+{#  <div align="center">#}
+{#    <table width="639" height="270" border="1">#}
+{#      <tr>#}
+{#        <td width="289"><div align="center">Username</div></td>#}
+{#        <td width="334"><div align="center">#}
+{#          <label>#}
+{#          <input type="text" name="textfield" />#}
+{#          </label>#}
+{#        </div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td height="74"><div align="center">Password</div></td>#}
+{#        <td><div align="center">#}
+{#          <label>#}
+{#          <input type="text" name="textfield2" />#}
+{#          </label>#}
+{#        </div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td height="44" colspan="2"><p><a href="new_registrationDoctor">Register as Doctor</a></p>#}
+{#        <p><a href="new_registrationUser">Register as User</a></p></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td colspan="2"><div align="center">#}
+{#          <label>#}
+{#          <input type="submit" name="Submit" value="LOGIN" />#}
+{#          </label>#}
+{#        </div></td>#}
+{#      </tr>#}
+{#            </table>#}
+{#  </div>#}
+{#<div align="center"></div></form>#}
+{#</body>#}
+{#</html>#}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login Page</title>
+<style>
+    body {
+        background-color: #f0f5f9; /* Light blue background */
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .login-container {
+        background-color: #ffffff;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        border-radius: 8px;
+        text-align: center;
+        max-width: 500px; /* Adjust as needed */
+        width: 100%;
+        box-sizing: border-box;
+    }
+    h2 {
+        color: #4285f4;
+        margin-bottom: 30px;
+    }
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    button {
+        background-color: #4285f4;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        box-shadow: 0px 4px 8px rgba(66, 133, 244, 0.2);
+        margin-top: 20px; /* Increased margin-top */
+    }
+    button:hover {
+        background-color: #357ae8;
+    }
+    .register-links {
+        margin-top: 20px; /* Increased margin-top */
+        padding-top: 10px; /* Padding between links */
+    }
+    .register-links a {
+        text-decoration: none;
+        color: #4285f4;
+        margin-right: 10px;
+        display: block; /* Each link on a new line */
+        margin-bottom: 10px; /* Margin between links */
+    }
+</style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form  id="form1" name="form1" method="post" action="/logincode"
+>
+            <input type="text" name="textfield" placeholder="Username" required><br>
+            <input type="password" name="textfield2" placeholder="Password" required><br>
+            <div class="register-links">
+                <a href="/new_registrationDoctor">Register as Doctor</a>
+                <a href="/new_registrationUser">Register as User</a>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

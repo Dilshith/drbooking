@@ -1,0 +1,141 @@
+{#{% extends 'DOCTOR/doctor home.html' %}#}
+{#{% block body %}#}
+{##}
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="/doctor_addNewScheduleCode">#}
+{#  <div align="center">#}
+{#    <table width="607" height="293" border="1">#}
+{#      <tr>#}
+{#        <td width="243" height="88"><div align="center">Date</div></td>#}
+{#        <td width="348"><div align="center">#}
+{#          <input type="date" name="textfield" />#}
+{#</div>#}
+{#          <label></label></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td height="86"><div align="center">From</div></td>#}
+{#        <td><div align="center">#}
+{#          <label>#}
+{#          <input type="time" name="textfield2" />#}
+{#          </label>#}
+{#        </div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td><div align="center">To</div></td>#}
+{#        <td><div align="center">#}
+{#          <label>#}
+{#          <input type="time" name="textfield3" />#}
+{#          </label>#}
+{#</div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td colspan="2"><div align="center">#}
+{#          <label>#}
+{#          <input type="submit" name="Submit" value="Set" />#}
+{#          </label>#}
+{#        </div>          <div align="center">#}
+{#            <label></label>#}
+{#          </div></td>#}
+{#      </tr>#}
+{#      </table>#}
+{#  </div>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+
+
+{#{% extends 'DOCTOR/doctor home.html' %}#}
+{##}
+{#{% block body %}#}
+{#<!DOCTYPE html>#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#  <title>Add New Schedule</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#  <form id="form1" name="form1" method="post" action="/doctor_addNewScheduleCode">#}
+{#    <div align="center">#}
+{#      <table width="607" height="293" border="1">#}
+{#        <tr>#}
+{#          <td width="243" height="88"><div align="center">Date</div></td>#}
+{#          <td width="348"><div align="center">#}
+{#            <input type="date" name="textfield" />#}
+{#          </div></td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#          <td height="86"><div align="center">From</div></td>#}
+{#          <td><div align="center">#}
+{#            <input type="time" name="textfield2" />#}
+{#          </div></td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#          <td><div align="center">To</div></td>#}
+{#          <td><div align="center">#}
+{#            <input type="time" name="textfield3" />#}
+{#          </div></td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#          <td colspan="2"><div align="center">#}
+{#            <input type="submit" name="Submit" value="Set" />#}
+{#          </div></td>#}
+{#        </tr>#}
+{#      </table>#}
+{#    </div>#}
+{#  </form>#}
+{#</body>#}
+{#</html>#}
+{#{% endblock %}#}
+
+
+{% extends 'DOCTOR/doctor home.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Add New Schedule</title>
+</head>
+
+<body>
+  <form id="form1" name="form1" method="post" action="/doctor_addNewScheduleCode">
+    <div align="center">
+      <table width="607" height="293" border="1">
+        <tr>
+          <td width="243" height="88"><div align="center">Date</div></td>
+          <td width="348"><div align="center">
+            <input type="date" name="textfield" />
+          </div></td>
+        </tr>
+        <tr>
+          <td height="86"><div align="center">From</div></td>
+          <td><div align="center">
+            <input type="time" name="textfield2" />
+          </div></td>
+        </tr>
+        <tr>
+          <td><div align="center">To</div></td>
+          <td><div align="center">
+            <input type="time" name="textfield3" />
+          </div></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <button type="submit" class="btn btn-primary">Set</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </form>
+</body>
+</html>
+{% endblock %}

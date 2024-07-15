@@ -1,0 +1,184 @@
+{#{% extends 'USER/user home.html' %}#}
+{#{% block body %}#}
+{##}
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<div align="center">#}
+{#    <form id="form1" name="form1" method="post" action="user_registrationCode" enctype="multipart/form-data">#}
+{#  <table width="541" height="456" border="1">#}
+{#    <tr>#}
+{#      <td width="216">Name</td>#}
+{#      <td width="309"><input type="text" name="textfield2" required="required"/></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td height="43">Image#}
+{#        <label></label></td>#}
+{#      <td><input type="file" name="file" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td height="39">Email</td>#}
+{#      <td><input type="email" name="textfield3" required="required" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td height="42">Place</td>#}
+{#      <td><input type="text" name="textfield32" required="required"/></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td height="37">Pin</td>#}
+{#      <td><input type="text" name="textfield33" required="required" pattern = "[0-9]{6}" title="Must contain 6 numbers"/></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td height="44">Post</td>#}
+{#      <td><input type="text" name="textfield34" required="required"/></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td height="38">Phone</td>#}
+{#      <td><input type="text" name="textfield35" required="required" pattern = "[0-9]{10}" title = "must have 10 numbers"/></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td height="37">username</td>#}
+{#      <td><input type="text" name="textfield36" required="required"/></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td height="37">password</td>#}
+{#      <td><label>#}
+{#        <input type="text" name="textfield37" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td height="68" colspan="2"><label>#}
+{#          <div align="center">#}
+{#            <input type="submit" name="Submit" value="Submit" />#}
+{#          </div>#}
+{#        </label></td>#}
+{#    </tr>#}
+{#  </table>#}
+{#    </form>#}
+{#</div>#}
+{#</body>#}
+{#{% endblock %}#}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login Page</title>
+<style>
+    body {
+        background-color: #f0f5f9; /* Light blue background */
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin: 0;
+    }
+    .login-container {
+        background-color: #ffffff;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        border-radius: 8px;
+        text-align: center;
+        max-width: 550px; /* Adjust as needed */
+        width: 100%;
+        box-sizing: border-box;
+    }
+    h2 {
+        color: #4285f4;
+        margin-bottom: 30px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #4285f4;
+        text-align: left;
+    }
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0 20px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    button {
+        background-color: #4285f4;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        box-shadow: 0px 4px 8px rgba(66, 133, 244, 0.2);
+        margin-top: 20px; /* Increased margin-top */
+        width: 100%;
+    }
+    button:hover {
+        background-color: #357ae8;
+    }
+    .register-links {
+        margin-top: 20px; /* Increased margin-top */
+        padding-top: 10px; /* Padding between links */
+    }
+    .register-links a {
+        text-decoration: none;
+        color: #4285f4;
+        display: block; /* Each link on a new line */
+        margin-bottom: 10px; /* Margin between links */
+    }
+</style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>User Registration</h2>
+<form id="form1" name="form1" method="post" action="/user_registrationCode" enctype="multipart/form-data">
+
+            <label for="username">Name</label>
+            <input type="text" id="username" name="textfield2" placeholder="Name" required><br>
+
+                <label for="Image">Image</label>
+            <input type="file" id="file" name="file" placeholder="Image" required><br>
+
+               <label for="Email">Email</label>
+            <input type="text" id="Email" name="textfield3" placeholder="Email" required><br>
+
+              <label for="Place">Place</label>
+            <input type="text" id="Place" name="textfield32" placeholder="Place" required><br>
+              <label for="Post">Post</label>
+            <input type="text" id="Post" name="textfield34" placeholder="Post" required><br>
+              <label for="Pin">Pin</label>
+            <input type="text" id="Pin" name="textfield33" placeholder="Pin"  required="required" pattern = "[0-9]{6}" title="Must contain 6 numbers"><br>
+             <label for="Phone">Phone</label>
+            <input type="text" id="Phone" name="textfield35" placeholder="Phone" required="required"  pattern = "[6789][0-9]{9}" title = "must have 10 numbers and start with a valid phone number"><br>
+              <label for="username">Username</label>
+            <input type="text" id="username" name="textfield36" placeholder="Username" required><br>
+             <label for="password">Password</label>
+            <input type="password" id="password" name="textfield37" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" > <br>
+
+
+
+
+
+
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,173 @@
+{#{% extends 'ADMIN/admin view.html' %}#}
+{#{% block body %}#}
+{##}
+{##}
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="">#}
+{#  <div align="center">#}
+{#    <table width="542" height="236" border="1">#}
+{#      <tr>#}
+{#        <td width="85" height="58"><div align="center">Doc ID </div></td>#}
+{#        <td width="154"><div align="center">Doctor Name </div></td>#}
+{#        <td width="162"><div align="center">Doctor Image </div></td>#}
+{#        <td width="113"><div align="center">Rating</div></td>#}
+{#        <td width="113"><div align="center">Patient</div></td>#}
+{##}
+{#      </tr>#}
+{#      <tr>#}
+{#          {% for i in ov %}#}
+{#        <td>&nbsp;{{ forloop.counter }}</td>#}
+{#        <td>&nbsp;{{ i.DOCTOR.name }}</td>#}
+{#        <td>&nbsp;<img src=" {{ i.DOCTOR.image.url }}" height="100" width="150" ></td>#}
+{#        <td>&nbsp;{{ i.rating }}</td>#}
+{#        <td>{{ i.USER.name }}</td>#}
+{#      </tr>#}
+{#        {% endfor %}#}
+{#      </table>#}
+{#  </div>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+
+
+
+{% extends 'ADMIN/admin view.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doctor Ratings</title>
+<!-- Include Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+<div class="container mt-5">
+{#  <div class="card">#}
+{#    <div class="card-header text-center">#}
+{#      <h4>Doctor Ratings</h4>#}
+{#    </div>#}
+{#    <div class="card-body">#}
+{#      <form id="form1" name="form1" method="post" action="">#}
+{#        <div class="form-group row">#}
+{#          <label for="textfield" class="col-sm-2 col-form-label">Search Doctor</label>#}
+{#          <div class="col-sm-6">#}
+{#            <input type="text" name="textfield" id="textfield" class="form-control">#}
+{#          </div>#}
+{#          <div class="col-sm-4">#}
+{#            <button type="submit" name="Submit" class="btn btn-primary">Search</button>#}
+{#          </div>#}
+{#        </div>#}
+{#      </form>#}
+{#    </div>#}
+{#  </div>#}
+
+  <div class="card mt-4">
+    <div class="card-header text-center">
+      <h4>Ratings</h4>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered mt-3">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Doc ID</th>
+            <th scope="col">Doctor Name</th>
+            <th scope="col">Doctor Image</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Patient</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in ov %}
+          <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ i.DOCTOR.name }}</td>
+            <td><img src="{{ i.DOCTOR.image.url }}" height="100" width="150" class="img-fluid"></td>
+            <td>{{ i.rating }}</td>
+            <td>{{ i.USER.name }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Include Bootstrap JS (optional) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+{% endblock %}
+
+
+
+
+{##}
+{#{% extends 'ADMIN/admin view.html' %}#}
+{#{% block body %}#}
+{##}
+{#<!DOCTYPE html>#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Doctor Ratings</title>#}
+{#<style>#}
+{#    .stars {#}
+{#        font-size: 24px; /* Adjust size as needed */#}
+{#        color: #f8ce0b; /* Star color */#}
+{#    }#}
+{#</style>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="">#}
+{#  <div align="center">#}
+{#    <table width="542" height="236" border="1">#}
+{#      <tr>#}
+{#        <td width="85" height="58"><div align="center">Doc ID </div></td>#}
+{#        <td width="154"><div align="center">Doctor Name </div></td>#}
+{#        <td width="162"><div align="center">Doctor Image </div></td>#}
+{#        <td width="113"><div align="center">Rating</div></td>#}
+{#        <td width="113"><div align="center">Patient</div></td>#}
+{#      </tr>#}
+{##}
+{#      {% for rating in ov %}#}
+{#      <tr>#}
+{#        <td>&nbsp;{{ forloop.counter }}</td>#}
+{#        <td>&nbsp;{{ rating.DOCTOR.name }}</td>#}
+{#        <td>&nbsp;<img src="{{ rating.DOCTOR.image.url }}" height="100" width="150" ></td>#}
+{#        <td>#}
+{#          <div class="rating">#}
+{#            <p>Rating: {{ rating.rating }} stars</p>#}
+{#            <div class="stars">#}
+{#                {% for _ in "x"|rjust:rating.rating %}#}
+{#                    ?#}
+{#                {% endfor %}#}
+{#            </div>#}
+{#          </div>#}
+{#        </td>#}
+{#        <td>&nbsp;{{ rating.USER.name }}</td>#}
+{#      </tr>#}
+{#      {% empty %}#}
+{#      <tr>#}
+{#        <td colspan="5">No ratings yet.</td>#}
+{#      </tr>#}
+{#      {% endfor %}#}
+{##}
+{#    </table>#}
+{#  </div>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}
+{##}
+{#{% endblock %}#}
+

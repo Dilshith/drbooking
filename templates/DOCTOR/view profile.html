@@ -1,0 +1,123 @@
+{#{% extends 'DOCTOR/doctor home.html' %}#}
+{#{% block body %}#}
+{##}
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">#}
+{#  <div align="center">#}
+{#    <table width="606" height="431" border="1">#}
+{#      <tr>#}
+{#        <td width="274" rowspan="8" align ="center"><label><img src="{{ ob.image.url }}"  alt="img" width="194" height="182"/></label></td>#}
+{#        <td width="316" height="114" ></td>#}
+{#      </tr>#}
+{#      #}
+{#      <tr>#}
+{#        <td> Name:{{ ob.name }}</td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td>&nbsp;Designation:{{ ob.Designation }}</td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td>&nbsp;Experience:{{ ob.experience }}</td>#}
+{#      </tr>#}
+{#        <tr>#}
+{#        <td>&nbsp;Email:{{ ob.email }}</td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td height="118"><dl><dt>Address:</dt><dd>{{ob.place }}</dd><br><dd>{{ ob.post }}</dd><br><dd>{{ ob.pin }}</dd></dl></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td height="40">Phone: {{ ob.phone }}</td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td height="40"><div>#}
+{#          <div align="center"><a href="/doctor_editDetails/{{ ob.id }}">Edit</a></div>#}
+{#        </div></td>#}
+{#      </tr>#}
+{#    </table>#}
+{#  </div>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+
+
+{% extends 'DOCTOR/doctor home.html' %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Details</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .doctor-details {
+      width: 606px;
+        height: 1100px;/* Adjust width as needed */
+      margin: 20px auto; /* Center the form */
+      border: 1px solid #ccc;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    .doctor-details img {
+      max-width: 100%;
+      height: auto;
+    }
+    .doctor-details dl {
+      margin-bottom: 10px;
+    }
+    .doctor-details dl dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="doctor-details">
+    <form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+      <div align="center">
+        <img src="{{ ob.image.url }}" alt="Doctor Image" width="194" height="182" />
+      </div>
+      <table class="table">
+        <tr>
+          <td>Name:</td>
+          <td>{{ ob.name }}</td>
+        </tr>
+        <tr>
+          <td>Designation:</td>
+          <td>{{ ob.Designation }}</td>
+        </tr>
+        <tr>
+          <td>Experience:</td>
+          <td>{{ ob.experience }}</td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td>{{ ob.email }}</td>
+        </tr>
+        <tr>
+          <td>Address:</td>
+          <td>{{ ob.place }}<br>{{ ob.post }}<br>{{ ob.pin }}</td>
+        </tr>
+        <tr>
+          <td>Phone:</td>
+          <td>{{ ob.phone }}</td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <a href="/doctor_editDetails/{{ ob.id }}" class="btn btn-primary">Edit Details</a>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,82 @@
+{#{% extends 'DOCTOR/doctor home.html' %}#}
+{#{% block body %}#}
+{##}
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="">#}
+{#  <div align="center">#}
+{#    <table width="565" height="167" border="1">#}
+{#      <tr>#}
+{#        <td width="110" height="39"><div align="center">Sl no </div></td>#}
+{#        <td width="215"><div align="center">Doctor Name </div></td>#}
+{#        <td width="218"><div align="center">Rating</div></td>#}
+{#        <td width="218"><div align="center">Patient</div></td>#}
+{#      </tr>#}
+{#      <tr>{% for i in ob %}#}
+{#        <td>&nbsp;{{ forloop.counter }}</td>#}
+{#        <td>&nbsp;{{ i.DOCTOR.name }}</td>#}
+{#        <td>{{ i.rating }}</td>#}
+{#        <td>{{ i.USER.name }}</td>#}
+{##}
+{#      </tr>#}
+{#        {% endfor %}#}
+{#      </table>#}
+{#  </div>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+
+{% extends 'DOCTOR/doctor home.html' %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Ratings</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom CSS for specific styling */
+    .ratings-container {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="ratings-container">
+      <table class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Sl no</th>
+            <th scope="col">Doctor Name</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Patient</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in ob %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ i.DOCTOR.name }}</td>
+            <td>{{ i.rating }}</td>
+            <td>{{ i.USER.name }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
+
+{% endblock %}
+

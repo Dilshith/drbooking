@@ -1,0 +1,41 @@
+{% extends 'USER/user home.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Prescription</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <div align="center">
+    <table width="978" height="256" border="1">
+      <tr>
+        <td width="81" height="32"><div align="center">SL:no</div></td>
+        <td width="163"><div align="center">DoctorName</div></td>
+        <td colspan="2"><div align="center">Schedule</div></td>
+        <td width="152"><div align="center">Date</div></td>
+        <td width="174"><div align="center">Image</div></td>
+        <td width="200"><div align="center">Prescription</div></td>
+      </tr>
+      <tr>{% for i in ov %}
+        <td rowspan="2">&nbsp;{{ forloop.counter }}</td>
+        <td rowspan="2">&nbsp;{{ i.BOOKING.SCHEDULE.DOCTOR.name }}</td>
+        <td width="82" height="23"><div align="center">From</div></td>
+        <td width="80"><div align="center">To</div></td>
+          <td rowspan="2">&nbsp;{{ i.BOOKING.SCHEDULE.date }}</td>
+        <td rowspan="2"><img src="{{i.image.url  }}" height="100" width="150" </td>
+        <td rowspan="2">&nbsp;{{ i.notes }}</td>
+      </tr>
+      <tr>
+        <td>&nbsp;{{ i.BOOKING.SCHEDULE.fromtime }}</td>
+        <td>&nbsp;{{ i.BOOKING.SCHEDULE.totime }}</td>
+      </tr>
+        {% endfor %}
+      </table>
+  </div>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,95 @@
+{#{% extends 'USER/user home.html' %}#}
+{#{% block body %}#}
+
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{##}
+{#  <form id="form1" name="form1" method="post" action="/user_sendRating">#}
+{#    <table width="551" height="192" border="1">#}
+{#      <tr>#}
+{##}
+{#        <td >Doctor name </td>#}
+{#        <td> <select name = "doc">#}
+{#        <option selected="selected">Select</option>#}
+{#        {% for i in  oj %}#}
+{#     <option value="{{ i.id }}">{{ i.name }}</option>#}
+{#               {% endfor %}#}
+{#        </select></td>#}
+{##}
+{#      </tr>#}
+{#      <tr>#}
+{#      <td>Rating</td>#}
+{#        <td ><label>#}
+{#        <select name="select">#}
+{#          <option selected="selected">Select</option>#}
+{#          <option>1</option>#}
+{#          <option>2</option>#}
+{#          <option>3</option>#}
+{#          <option>4</option>#}
+{#          <option>5</option>#}
+{#          </select>#}
+{#        </label></td>#}
+{#      </tr>#}
+{#    <tr>#}
+{#        <td colspan="2"><label>#}
+{#          <input type="submit" name="Submit" value="Send" />#}
+{#        </label></td>#}
+{#      </tr>#}
+{##}
+{#    </table>#}
+{#  </form>#}
+{#</body>#}
+{#{% endblock %}#}
+
+
+{% extends 'USER/user home.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Rating Form</title>
+</head>
+<body>
+  <form id="form1" name="form1" method="post" action="/user_sendRating">
+    <table width="551" height="192" border="1">
+      <tr>
+        <td>Doctor name</td>
+        <td>
+          <select name="doc">
+            <option selected="selected">Select</option>
+            {% for doctor in oj %}
+            <option value="{{ doctor.id }}">{{ doctor.name }}</option>
+            {% endfor %}
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Rating</td>
+        <td>
+          <select name="rating">
+            <option selected="selected">Select</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="submit" name="Submit" value="Send" />
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>
+{% endblock %}

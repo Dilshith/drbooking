@@ -1,0 +1,95 @@
+{#{% extends 'DOCTOR/doctor home.html' %}#}
+{#{% block body %}#}
+{##}
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="">#}
+{#  <div align="center">#}
+{#    <table width="572" height="218" border="1">#}
+{#      <tr>#}
+{#        <td width="104" height="45"><div align="center">Sl:no</div></td>#}
+{#        <td width="296"><div align="center">Notification</div></td>#}
+{#        <td width="150"><div align="center">Date</div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#          {% for i in hh %}#}
+{#        <td height="117">&nbsp;{{ forloop.counter }}</td>#}
+{#        <td>&nbsp;{{ i.notification }}</td>#}
+{#        <td>&nbsp;{{ i.date }}</td>#}
+{#      </tr>#}
+{#        {% endfor %}#}
+{#      </table>#}
+{#  </div>#}
+{#  <div align="center"></div>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+
+
+
+{% extends 'DOCTOR/doctor home.html' %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <form id="notificationForm" method="post" action="/doctor_notiSearchByDate">
+    <div class="d-flex justify-content-center">
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead class="thead-dark">
+                <tr>
+    <td height="45" colspan="4"><div align="center">
+          <label>
+          Date
+          <input type="date" name="textfield" />
+          <input type="submit" name="Submit" value="Submit" />
+          </label>
+    </div></td></tr>
+                    <tr>
+
+                        <th scope="col">Sl:no</th>
+                        <th scope="col">Notification</th>
+                        <th scope="col">Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in hh %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ i.notification }}</td>
+                        <td>{{ i.date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+{% endblock %}
+
+
+

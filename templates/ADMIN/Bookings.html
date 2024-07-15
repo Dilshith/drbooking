@@ -1,0 +1,142 @@
+{#{% extends 'ADMIN/admin view.html' %}#}
+{#{% block body %}#}
+{##}
+{##}
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<div align="center">#}
+{#  <table width="767" height="324" border="1">#}
+{##}
+{#    <tr>#}
+{#      <td height="34" colspan="6"><div align="center">#}
+{#        <form id="form1" name="form1" method="post" action="/admin_searchDoctor1">#}
+{#          <label>#}
+{#            <input type="text" name="textfield" />#}
+{#            </label>#}
+{#          <label>#}
+{#          <input type="submit" name="Submit" value="Search" />#}
+{#          </label>#}
+{#        </form>#}
+{#        </div></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{##}
+{##}
+{##}
+{#      <td width="131" height="51"><div align="center">Sl No </div></td>#}
+{#      <td width="195"><div align="center">Doctor Name</div></td>#}
+{#      <td width="131"><div align="center">Date</div></td>#}
+{#      <td colspan="2"><div align="center">Time</div></td>#}
+{#      <td width="141"><div align="center">Count</div></td>#}
+{#    </tr>#}
+{##}
+{#    <tr>#}
+{#        {% for i in  book%}#}
+{#      <td rowspan="2">&nbsp;{{ forloop.counter }}</td>#}
+{#      <td rowspan="2">&nbsp;{{ i.name }}</td>#}
+{#      <td rowspan="2">&nbsp;{{ i.date }}</td>#}
+{#      <td width="63" height="28">&nbsp;From</td>#}
+{#      <td width="66">To</td>#}
+{#      <td rowspan="2"><div align="center"><a href="/admin_viewAllBooking/{{ i.docid }}">({{ i.cnt }}</a>)</div></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td height="134">{{ i.fromtime }}</td>#}
+{#      <td width="66">{{ i.totime }}</td>#}
+{#    </tr>#}
+{#         {% endfor %}#}
+{#  </table>#}
+{#</div>#}
+{#</body>#}
+{#{% endblock %}#}
+{##}
+
+
+
+
+{% extends 'ADMIN/admin view.html' %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Booking Search</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .table th, .table td {
+      text-align: center;
+      vertical-align: middle;
+    }
+    .form-container {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .count-link {
+      text-decoration: none;
+      color: #007bff;
+    }
+    .count-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center form-container">
+      <div class="col-md-6">
+        <form id="form1" name="form1" method="post" action="/admin_searchDoctor1" class="form-inline justify-content-center">
+          <div class="form-group mx-sm-3 mb-2">
+            <input type="text" name="textfield" class="form-control" placeholder="Search Doctor">
+          </div>
+          <button type="submit" name="Submit" class="btn btn-primary mb-2">Search</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th>Sl No</th>
+            <th>Doctor Name</th>
+            <th>Date</th>
+            <th>From Time</th>
+            <th>To Time</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in book %}
+          <tr>
+            <td rowspan="2">{{ forloop.counter }}</td>
+            <td rowspan="2">{{ i.name }}</td>
+            <td rowspan="2">{{ i.date }}</td>
+            <td  rowspan="2">{{ i.fromtime }}</td>
+            <td rowspan="2">{{ i.totime }}</td>
+           <td rowspan="2">
+              <a href="/admin_viewAllBooking/{{ i.docid }}" class="count-link">({{ i.cnt }})</a>
+            </td>
+          </tr>
+          <tr>
+{#            <td colspan="2"></td>#}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Include Bootstrap JS (optional) -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,343 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<div align="center">#}
+{#  <form id="form1" name="form1" method="post" action="doc_registrationCode" enctype="multipart/form-data">#}
+{#    <table width="632" height="456" border="1">#}
+{#      <tr>#}
+{#        <td width="254">Name</td>#}
+{#        <td width="362"><input type="text" name="textfield2" required="required"/></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td height="43">Image#}
+{#          <label></label></td>#}
+{#        <td><input type="file" name="file" /></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td height="39">Designation</td>#}
+{#        <td><div align="left">#}
+{#            <input type="text" name="textfield4" />#}
+{#        </div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td height="39">Email</td>#}
+{#        <td><div align="left">#}
+{#            <input type="email" name="textfield3" required="required" />#}
+{#        </div></td>#}
+{#      </tr>#}
+{#  <td>Experience </td>#}
+{#      <td height="42" colspan="2"><div align="left">#}
+{#        <label>#}
+{#        <input type="text" name="textfield5" />#}
+{#        </label>#}
+{#      </div></td>#}
+{#    </tr>#}
+{#  <tr>#}
+{#    <td height="42">Place</td>#}
+{#    <td><input type="text" name="textfield32" required="required"/></td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <td height="37">Pin</td>#}
+{#    <td><input type="text" name="textfield33" required="required" pattern = "[0-9]{6}" title="Must contain 6 numbers"/></td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <td height="44">Post</td>#}
+{#    <td><input type="text" name="textfield34" required="required"/></td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <td height="38">Phone</td>#}
+{#    <td><input type="text" name="textfield35" required="required" pattern = "[6789][0-9]{9}" title = "must have 10 numbers and start with a valid phone number"/></td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <td height="37">username</td>#}
+{#    <td><input type="text" name="textfield36" required="required"/></td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <td height="37">password</td>#}
+{#    <td><label>#}
+{#      <input type="text" name="textfield37" />#}
+{#    </label></td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <td height="68" colspan="2"><label> </label>#}
+{#        <div align="center">#}
+{#          <input type="submit" name="Submit" value="Submit" />#}
+{#      </div></td>#}
+{#  </tr>#}
+{#    </table>#}
+{#  </form>#}
+{#</div>#}
+{#</body>#}
+{#</html>#}
+
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#<meta charset="UTF-8">#}
+{#       <form  id="form1" name="form1" method="post" action="doc_registrationCode" enctype="multipart/form-data"#}
+{#<meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{##}
+{#<title>Registration Page</title>#}
+{#<style>#}
+{#    body {#}
+{#        background-color: #f0f5f9; /* Light blue background */#}
+{#        font-family: Arial, sans-serif;#}
+{#        display: flex;#}
+{#        justify-content: center;#}
+{#        align-items: center;#}
+{#        height: 100vh;#}
+{#        margin: 0;#}
+{#    }#}
+{#    .registration-container {#}
+{#        background-color: #ffffff;#}
+{#        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);#}
+{#        padding: 40px;#}
+{#        border-radius: 8px;#}
+{#        text-align: center;#}
+{#        max-width: 500px; /* Adjust as needed */#}
+{#        width: 100%;#}
+{#        box-sizing: border-box;#}
+{#    }#}
+{#    h2 {#}
+{#        color: #4285f4;#}
+{#        margin-bottom: 30px;#}
+{#    }#}
+{#    input[type="text"], input[type="password"], input[type="email"] {#}
+{#        width: 100%;#}
+{#        padding: 10px;#}
+{#        margin: 8px 0;#}
+{#        box-sizing: border-box;#}
+{#        border: 1px solid #ccc;#}
+{#        border-radius: 4px;#}
+{#    }#}
+{#    button {#}
+{#        background-color: #4285f4;#}
+{#        color: white;#}
+{#        border: none;#}
+{#        padding: 10px 20px;#}
+{#        text-align: center;#}
+{#        text-decoration: none;#}
+{#        display: inline-block;#}
+{#        font-size: 16px;#}
+{#        border-radius: 4px;#}
+{#        cursor: pointer;#}
+{#        box-shadow: 0px 4px 8px rgba(66, 133, 244, 0.2);#}
+{#        margin-top: 20px;#}
+{#    }#}
+{#    button:hover {#}
+{#        background-color: #357ae8;#}
+{#    }#}
+{#</style>#}
+{#</head>#}
+{#<body>#}
+{#    <div class="registration-container">#}
+{##}
+{#        <form>#}
+{#            <h2>Register</h2>#}
+{#            <label>Name</label>#}
+{#            <input type="text" name="textfield2" placeholder="Name" required><br>#}
+{#            <label>Image</label>#}
+{#            <input type="file" name="file"  required><br>#}
+{#            <label>Email</label>#}
+{#            <input type="email" name="textfield3" placeholder="Email" required><br>#}
+{#            <label>Designation</label>#}
+{#            <input type="text" name="textfield4" placeholder="Designation" required><br>#}
+{#            <label>Experience</label>#}
+{#            <input type="text" name="textfield5"  placeholder="Experience" required><br>#}
+{#            <label>#}
+{#                Place#}
+{#            </label>#}
+{#            <input type="text" name="textfield32" placeholder="Place" required><br>#}
+{#            <label>Pin</label>#}
+{#            <input type="text" name="textfield33" placeholder="Pin " required="required" pattern = "[0-9]{6}" title="Must contain 6 numbers"><br>#}
+{#            <label>Post</label>#}
+{#            <label>Post</label>#}
+{#            <input type="text" name="textfield34" placeholder="Post" required><br>#}
+{#            <input type="text"name="textfield35" placeholder="Phone" required="required"  pattern = "[6789][0-9]{9}" title = "must have 10 numbers and start with a valid phone number"><br>#}
+{#            <label>Username</label>#}
+{#            <input type="text" name="textfield36" placeholder="Username" required><br>#}
+{#            <label>Password</label>#}
+{#            <input type="password"name="textfield37" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required><br>#}
+{#            <button type="submit">Register</button>#}
+{#        </form>#}
+{#    </div>#}
+{#</body>#}
+{#</html>#}
+
+
+
+
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="/logincode">#}
+{#  #}
+{#  <div align="center">#}
+{#    <table width="639" height="270" border="1">#}
+{#      <tr>#}
+{#        <td width="289"><div align="center">Username</div></td>#}
+{#        <td width="334"><div align="center">#}
+{#          <label>#}
+{#          <input type="text" name="textfield" />#}
+{#          </label>#}
+{#        </div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td height="74"><div align="center">Password</div></td>#}
+{#        <td><div align="center">#}
+{#          <label>#}
+{#          <input type="text" name="textfield2" />#}
+{#          </label>#}
+{#        </div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td height="44" colspan="2"><p><a href="new_registrationDoctor">Register as Doctor</a></p>#}
+{#        <p><a href="new_registrationUser">Register as User</a></p></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td colspan="2"><div align="center">#}
+{#          <label>#}
+{#          <input type="submit" name="Submit" value="LOGIN" />#}
+{#          </label>#}
+{#        </div></td>#}
+{#      </tr>#}
+{#            </table>#}
+{#  </div>#}
+{#<div align="center"></div></form>#}
+{#</body>#}
+{#</html>#}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login Page</title>
+<style>
+    body {
+        background-color: #f0f5f9; /* Light blue background */
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin: 0;
+    }
+    .login-container {
+        background-color: #ffffff;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        border-radius: 8px;
+        text-align: center;
+        max-width: 550px; /* Adjust as needed */
+        width: 100%;
+        box-sizing: border-box;
+    }
+    h2 {
+        color: #4285f4;
+        margin-bottom: 30px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #4285f4;
+        text-align: left;
+    }
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0 20px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    button {
+        background-color: #4285f4;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        box-shadow: 0px 4px 8px rgba(66, 133, 244, 0.2);
+        margin-top: 20px; /* Increased margin-top */
+        width: 100%;
+    }
+    button:hover {
+        background-color: #357ae8;
+    }
+    .register-links {
+        margin-top: 20px; /* Increased margin-top */
+        padding-top: 10px; /* Padding between links */
+    }
+    .register-links a {
+        text-decoration: none;
+        color: #4285f4;
+        display: block; /* Each link on a new line */
+        margin-bottom: 10px; /* Margin between links */
+    }
+</style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Doctor Registration</h2>
+<form id="form1" name="form1" method="post" action="/doc_registrationCode" enctype="multipart/form-data">
+
+            <label for="username">Name</label>
+            <input type="text" id="username" name="textfield2" placeholder="Name" required><br>
+
+                <label for="Image">Image</label>
+            <input type="file" id="file" name="file" placeholder="Image" required><br>
+              <label for="Designation">Designation</label>
+            <input type="text" id="Designation" name="textfield4" placeholder="Designation" required><br>
+               <label for="Email">Email</label>
+            <input type="text" id="Email" name="textfield3" placeholder="Email" required><br>
+              <label for="Experience">Experience</label>
+            <input type="text" id="Experience" name="textfield5" placeholder="Experience" required><br>
+              <label for="Place">Place</label>
+            <input type="text" id="Place" name="textfield32" placeholder="Place" required><br>
+              <label for="Post">Post</label>
+            <input type="text" id="Post" name="textfield34" placeholder="Post" required><br>
+              <label for="Pin">Pin</label>
+            <input type="text" id="Pin" name="textfield33" placeholder="Pin"  required="required" pattern = "[0-9]{6}" title="Must contain 6 numbers"><br>
+             <label for="Phone">Phone</label>
+            <input type="text" id="Phone" name="textfield35" placeholder="Phone" required="required"  pattern = "[6789][0-9]{9}" title = "must have 10 numbers and start with a valid phone number"><br>
+              <label for="username">Username</label>
+            <input type="text" id="username" name="textfield36" placeholder="Username" required><br>
+             <label for="password">Password</label>
+            <input type="password" id="password" name="textfield37" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" > <br>
+
+
+
+
+
+
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+

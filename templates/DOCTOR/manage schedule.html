@@ -1,0 +1,238 @@
+{#{% extends 'DOCTOR/doctor home.html' %}#}
+{#{% block body %}#}
+{##}
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="/doctor_scheduleSearch">#}
+{#  <div align="center">#}
+{#    <table width="567" height="274" border="1">#}
+{#      <tr>#}
+{#             <td height="45" colspan="5"><div align="center">#}
+{#          <label>#}
+{#          Date#}
+{#          <input type="date" name="textfield" />#}
+{#          <input type="submit" name="Submit" value="Submit" />#}
+{#          </label>#}
+{#        </div></td>#}
+{##}
+{#      <tr>#}
+{#        <td width="90" height="41"><div align="center">Slno</div></td>#}
+{#        <td width="157"><div align="center">Date</div></td>#}
+{#        <td width="146"><div align="center">From  </div></td>#}
+{#        <td width="146"><div align="center">To</div></td>#}
+{#        <td width="146"><div align="center">Actions</div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#          {% for i in ob%}#}
+{#        <td height="123">{{forloop.counter}}</td>#}
+{#        <td>{{ i.date }}</td>#}
+{#        <td><div align="center"></div>{{ i.fromtime }}</td>#}
+{#        <td>{{ i.totime }}</td>#}
+{#              <td> <a href="/doc_deleteSchedules/{{ i.id }}" onclick="">Delete</a> </td>#}
+{#      </tr>#}
+{#        {% endfor %}#}
+{#      <tr>#}
+{#        <td height="53" colspan="5"><div align="center"><a href="/doctor_addNewSchedule">Add New</a></div></td>#}
+{#      </tr>#}
+{#    </table>#}
+{#    <a href="#"></a></div>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+{##}
+{#{% extends 'DOCTOR/doctor home.html' %}#}
+{##}
+{#{% block body %}#}
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#  <meta charset="UTF-8">#}
+{#  <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#  <title>Doctor Schedule Search</title>#}
+{#  <style>#}
+{#    body {#}
+{#      font-family: Arial, sans-serif;#}
+{#      background-color: #f9f9f9;#}
+{#      margin: 20px;#}
+{#    }#}
+{#    .container {#}
+{#      max-width: 800px;#}
+{#      margin: 0 auto;#}
+{#      padding: 20px;#}
+{#      border: 1px solid #ccc;#}
+{#      background-color: #fff;#}
+{#    }#}
+{#    .form-container {#}
+{#      margin-bottom: 20px;#}
+{#    }#}
+{#    table {#}
+{#      width: 100%;#}
+{#      border-collapse: collapse;#}
+{#      margin-top: 20px;#}
+{#    }#}
+{#    th, td {#}
+{#      padding: 8px;#}
+{#      text-align: left;#}
+{#      border-bottom: 1px solid #ddd;#}
+{#    }#}
+{#    th {#}
+{#      background-color: #f2f2f2;#}
+{#    }#}
+{#    .center-align {#}
+{#      text-align: center;#}
+{#    }#}
+{#    .form-center {#}
+{#      text-align: center;#}
+{#      margin-bottom: 10px;#}
+{#    }#}
+{#  </style>#}
+{#</head>#}
+{#<body>#}
+{#  <div class="container">#}
+{#    <form id="form1" name="form1" method="post" action="/doctor_scheduleSearch" class="form-container">#}
+{#      <div class="form-center">#}
+{#        <label>Date:</label>#}
+{#        <input type="date" name="textfield" required>#}
+{#        <button type="submit">Submit</button>#}
+{#      </div>#}
+{#    </form>#}
+{##}
+{#    <table>#}
+{#      <thead>#}
+{#        <tr>#}
+{#          <th>Slno</th>#}
+{#          <th>Date</th>#}
+{#          <th>From</th>#}
+{#          <th>To</th>#}
+{#          <th>Actions</th>#}
+{#        </tr>#}
+{#      </thead>#}
+{#      <tbody>#}
+{#        {% for i in ob %}#}
+{#        <tr>#}
+{#          <td>{{ forloop.counter }}</td>#}
+{#          <td>{{ i.date }}</td>#}
+{#          <td>{{ i.fromtime }}</td>#}
+{#          <td>{{ i.totime }}</td>#}
+{#          <td class="center-align">#}
+{#            <a href="/doc_deleteSchedules/{{ i.id }}" onclick="return confirm('Are you sure you want to delete this schedule?')">Delete</a>#}
+{#          </td>#}
+{#        </tr>#}
+{#        {% endfor %}#}
+{#      </tbody>#}
+{#      <tfoot>#}
+{#        <tr>#}
+{#          <td colspan="5" class="center-align">#}
+{#            <a href="/doctor_addNewSchedule">Add New</a>#}
+{#          </td>#}
+{#        </tr>#}
+{#      </tfoot>#}
+{#    </table>#}
+{#  </div>#}
+{#</body>#}
+{#</html>#}
+{#{% endblock %}#}
+{##}
+{##}
+
+
+{% extends 'DOCTOR/doctor home.html' %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Schedule Management</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+{#    body {#}
+{#      font-family: Arial, sans-serif;#}
+{#      background-color: #f9f9f9;#}
+{#      margin: 20px;#}
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+    }
+    .form-container {
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .center-align {
+      text-align: center;
+    }
+    .form-center {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form id="form1" name="form1" method="post" action="/doctor_scheduleSearch" class="form-container">
+      <div class="form-center">
+        <label>Date:</label>
+        <input type="date" name="textfield" required>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th>Sl no</th>
+          <th>Date</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in ob %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ i.date }}</td>
+          <td>{{ i.fromtime }}</td>
+          <td>{{ i.totime }}</td>
+          <td class="center-align">
+            <a href="/doc_deleteSchedules/{{ i.id }}" onclick="return confirm('Are you sure you want to delete this schedule?')" class="btn btn-danger">Delete</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="5" class="center-align">
+            <a href="/doctor_addNewSchedule" class="btn btn-success">Add New</a>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</body>
+</html>
+
+{% endblock %}

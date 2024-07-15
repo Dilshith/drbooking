@@ -1,0 +1,187 @@
+{#{% extends 'ADMIN/admin view.html' %}#}
+{#{% block body %}#}
+{##}
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="/admin_searchUser">#}
+{#  <div align="center">#}
+{#    <table width="1013" height="426" border="1">#}
+{#      <tr>#}
+{#        <td height="49" colspan="7"><label>#}
+{#          <div align="center">#}
+{#            Name#}
+{#            <input type="text" name="textfield" />#}
+{#            <input type="submit" name="Submit" value="SEARCH" />#}
+{#          </div>#}
+{#        </label></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td width="72" height="72"><div align="center"> ID </div></td>#}
+{#        <td width="167"><div align="center">Name</div></td>#}
+{#        <td width="163"><div align="center">Image</div></td>#}
+{##}
+{#        <td width="165"><div align="center">Address</div></td>#}
+{#        <td width="144"><div align="center">Phone</div></td>#}
+{#        <td width="124"><div align="center">Action#}
+{#        </div>#}
+{#        <div align="center"></div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#          {% for i in ur %}#}
+{##}
+{##}
+{##}
+{#        <td height="295">{{ forloop.counter }}</td>#}
+{#        <td>{{ i.name }}</td>#}
+{#        <td>&nbsp;<img src="{{ i.image.url }}" height = "100" width="100"></td>#}
+{#        <td>&nbsp;{{ i.place }}<br>{{ i.post }}<br>{{ i.pin }}</td>#}
+{#        <td>&nbsp;{{ i.phone }}</td>#}
+{##}
+{#                {% if i.LOGIN.type == "pending"%}#}
+{#        <td><p><a href="/admin_acceptUser/{{ i.LOGIN.id }}">Approve</a></p>#}
+{#        <p><a href="/admin_rejectUser/{{ i.LOGIN.id }}">Reject</a></p></td>#}
+{##}
+{#              {% else %}#}
+{#        <td width="128" colspan="2">{{ i.LOGIN.type }}</td>#}
+{#        {% endif %}#}
+{#      </tr>#}
+{#        {% endfor %}#}
+{#      </table>#}
+{#  </div>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+{##}
+
+{% extends 'ADMIN/admin view.html' %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Management</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .table-container {
+      margin-top: 20px;
+    }
+    .search-form {
+      margin-bottom: 10px;
+    }
+    .table {
+      border: 1px solid #dee2e6;
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 1rem;
+      background-color: #fff;
+    }
+    .table th, .table td {
+      padding: 0.75rem; /* Adjust padding as needed */
+      vertical-align: top;
+      border-top: 1px solid #dee2e6;
+    }
+    .table thead th {
+      vertical-align: bottom;
+      border-bottom: 1px solid #dee2e6;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+    .table tbody + tbody {
+      border-top: 2px solid #dee2e6;
+    }
+    .table-bordered {
+      border: 1px solid #dee2e6;
+    }
+    .table-bordered th, .table-bordered td {
+      border: 1px solid #dee2e6;
+    }
+    .center-align {
+      text-align: center;
+    }
+    .image-size {
+      max-width: 100px;
+      height: auto;
+    }
+    .action-buttons {
+      text-align: center;
+    }
+    .action-buttons a {
+      margin-right: 5px; /* Adjust margin between buttons */
+    }
+    .search-form label {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center mt-4 mb-4">User Management</h1>
+
+{#    <form class="form-inline mb-4 search-form" method="post" action="/admin_searchUser">#}
+{#      <label class="mr-2">Name:</label>#}
+{#      <input type="text" class="form-control mr-2" name="textfield">#}
+{#      <button type="submit" class="btn btn-primary">SEARCH</button>#}
+{#    </form>#}
+
+
+  <div class="card-body">
+      <form id="form1" name="form1" method="post" action="/admin_searchUser">
+        <div class="form-group row">
+          <label for="textfield" class="col-sm-2 col-form-label">Name:</label>
+          <div class="col-sm-6">
+            <input type="text" name="textfield" id="textfield" class="form-control">
+          </div>
+          <div class="col-sm-4">
+            <button type="submit" name="Submit" class="btn btn-primary">SEARCH</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="table-container">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in ur %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ user.name }}</td>
+            <td><img src="{{ user.image.url }}" alt="User Image" class="image-size"></td>
+            <td>{{ user.place }}<br>{{ user.post }}<br>{{ user.pin }}</td>
+            <td>{{ user.phone }}</td>
+            <td class="action-buttons">
+              {% if user.LOGIN.type == "pending" %}
+              <a href="/admin_acceptUser/{{ user.LOGIN.id }}" class="btn btn-success">Approve</a>
+              <a href="/admin_rejectUser/{{ user.LOGIN.id }}" class="btn btn-danger">Reject</a>
+              {% else %}
+              <span>{{ user.LOGIN.type }}</span>
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+{% endblock %}

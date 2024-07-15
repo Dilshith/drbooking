@@ -1,0 +1,130 @@
+{#{% extends 'DOCTOR/doctor home.html' %}#}
+{#{% block body %}#}
+{##}
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="/doctor_searchByDate" enctype="multipart/form-data">#}
+{##}
+{#  <div align="center">#}
+{#    <table width="809" height="281" border="1">#}
+{#      <tr>#}
+{#        <td height="48" colspan="6"><div align="center">#}
+{#          <label>#}
+{#          <input type="date" name="textfield" value="{{ dt1 }}"/>#}
+{#          </label>#}
+{#           <input type="date" name="textfield2" value="{{ dt2 }}" />#}
+{#        </div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td height="41" colspan="6"><div align="center">#}
+{#          <label></label>#}
+{#          <label>#}
+{#          <input type="submit" name="Submit" value="Submit" />#}
+{#          </label>#}
+{#        </div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td width="77" height="72"><div align="center">Sl no </div></td>#}
+{#        <td width="208"><div align="center">Patients Name </div></td>#}
+{#        <td width="102"><div align="center">Date</div></td>#}
+{#        <td width="100"><div align="center">Time</div></td>#}
+{#        <td width="136"><div align="center">Details</div></td>#}
+{#        <td width="146"><div align="center">Upload</div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#            {% for i in ob %}#}
+{#        <td height="108">&nbsp;{{ forloop.counter }}</td>#}
+{#        <td>&nbsp;{{ i.USER.name }}</td>#}
+{#        <td>&nbsp;{{ i.SCHEDULE.date }}</td>#}
+{#        <td>&nbsp;{{ i.SCHEDULE.fromtime }} - {{ i.SCHEDULE.totime }}.</td>#}
+{#        <td><div align="center"><a href="/doctor_viewBookingDeatils/{{ i.USER.id }}">Details</a></div></td>#}
+{#        <td><div align="center"><a href="/doctor_uploadPrescription/{{ i.id }}">Upload</a></div></td>#}
+{#      </tr>#}
+{#        {% endfor %}#}
+{#            </table>#}
+{#    <a href="#"></a></div>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+
+
+{% extends 'DOCTOR/doctor home.html' %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Search By Date</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom CSS for specific styling */
+    .form-container {
+      margin-top: 20px;
+    }
+    .table-container {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="form-container">
+      <form id="form1" name="form1" method="post" action="/doctor_searchByDate" enctype="multipart/form-data">
+        <div class="form-row justify-content-center">
+          <div class="form-group col-md-5">
+            <input type="date" class="form-control" name="textfield" value="{{ dt1 }}">
+          </div>
+          <div class="form-group col-md-5">
+            <input type="date" class="form-control" name="textfield2" value="{{ dt2 }}">
+          </div>
+          <div class="form-group col-md-2">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="table-container">
+      <table class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Sl no</th>
+            <th scope="col">Patients Name</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Details</th>
+            <th scope="col">Upload</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in ob %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ i.USER.name }}</td>
+            <td>{{ i.SCHEDULE.date }}</td>
+            <td>{{ i.SCHEDULE.fromtime }} - {{ i.SCHEDULE.totime }}</td>
+            <td><a href="/doctor_viewBookingDeatils/{{ i.USER.id }}" class="btn btn-info btn-sm">Details</a></td>
+            <td><a href="/doctor_uploadPrescription/{{ i.id }}" class="btn btn-success btn-sm">Upload</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+{% endblock %}

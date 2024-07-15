@@ -1,0 +1,38 @@
+{% extends 'USER/user home.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <div align="center">
+    <table width="811" height="259" border="1">
+      <tr>
+        <td width="115" height="51"><div align="center">Sl No </div></td>
+        <td width="173"><div align="center">Doctor Name</div></td>
+        <td width="101"><div align="center">Booking date </div></td>
+        <td width="258"><div align="center">Time</div></td>
+        <td width="130"><div align="center">Action</div></td>
+      </tr>
+      <tr>
+          {% for i in ov %}
+
+
+
+        <td>&nbsp;{{ forloop.counter }}</td>
+        <td>&nbsp;{{ i.SCHEDULE.DOCTOR.name }}</td>
+        <td>&nbsp;{{ i.SCHEDULE.date }}</td>
+        <td>&nbsp;{{ i.SCHEDULE.fromtime }} - {{ i.SCHEDULE.totime }}</td>
+        <td><div align="center"><a href="/user_deleteSchedule/{{ i.id }}" onclick="return confirm('Are you sure?')">Remove</a></div></td>
+      </tr>
+          {% endfor %}
+    </table>
+  </div>
+</form>
+</body>
+{% endblock %}

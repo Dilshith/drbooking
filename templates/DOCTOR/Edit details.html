@@ -1,0 +1,185 @@
+{#{% extends 'DOCTOR/doctor home.html' %}#}
+{#{% block body %}#}
+{##}
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form action="/doctor_editDetailsCode" method="post" enctype="multipart/form-data" name="form1" id="form1">#}
+{#  <div align="center">#}
+{#    <table width="583" height="366" border="1">#}
+{#      <tr>#}
+{#        <td width="252"><div align="center">Name</div></td>#}
+{#        <td width="315"><div align="center">#}
+{#          <label>#}
+{#          <input type="text" name="textfield" value = "{{ ob.name }}"/>#}
+{#          </label>#}
+{#        </div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td><div align="center">Designation</div></td>#}
+{#        <td><div align="center">#}
+{#          <label>#}
+{#          <input type="text" name="textfield2" value ="{{ ob.Designation }}" />#}
+{#          </label>#}
+{#        </div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td><div align="center">Image</div></td>#}
+{#        <td><div align="center">#}
+{#          <label>#}
+{#          <input type="file" name="file" />{{ ob.image }}#}
+{#          </label>#}
+{#        </div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td><div align="center">Experience</div></td>#}
+{#        <td><div align="center">#}
+{#          <label>#}
+{#          <input type="text" name="textfield3" value = "{{ ob.experience }}"/>#}
+{#          </label>#}
+{#        </div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td><div align="center">Place</div></td>#}
+{#        <td><div align="center">#}
+{#          <label>#}
+{#          <input type="text" name="textfield4" value = "{{ ob.place }}"/>#}
+{#          </label>#}
+{#        </div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td><div align="center">Pin</div></td>#}
+{#        <td><div align="center">#}
+{#          <label>#}
+{#          <input type="text" name="textfield5" value = "{{ ob.pin }}" required = "required" pattern= "[0-9]{6}" title="Must contain 6 numbers"/>#}
+{#          </label>#}
+{#        </div></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td><div align="center">Post</div></td>#}
+{#        <td><div align="center">#}
+{#          <label>#}
+{#          <input type="text" name="textfield6" value="{{ ob.post }}" />#}
+{#          </label>#}
+{#        </div></td>#}
+{#      </tr>#}
+{##}
+{#        <tr>#}
+{#        <td><div align="center">Phone</div></td>#}
+{#        <td><div align="center">#}
+{#          <label>#}
+{#          <input type="text" name="textfield7" value="{{ ob.phone }}" required = "required" pattern="[6789][0-9]{9}" title = "must have 10 numbers and start with a valid phone number" />#}
+{#          </label>#}
+{#        </div></td>#}
+{#      </tr>#}
+{##}
+{#      <tr>#}
+{#        <td colspan="2"><div align="center">#}
+{#          <label>#}
+{#          <input type="submit" name="Submit" value="Submit" />#}
+{#          </label>#}
+{#        </div></td>#}
+{#      </tr>#}
+{#    </table>#}
+{#  </div>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+
+
+{% extends 'DOCTOR/doctor home.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Edit Doctor Details</title>
+</head>
+
+<body>
+  <form action="/doctor_editDetailsCode" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    <div align="center">
+      <table width="583" height="366" border="1">
+        <tr>
+          <td width="252"><div align="center">Name</div></td>
+          <td width="315"><div align="center">
+            <label>
+              <input type="text" name="textfield" value="{{ ob.name }}" />
+            </label>
+          </div></td>
+        </tr>
+        <tr>
+          <td><div align="center">Designation</div></td>
+          <td><div align="center">
+            <label>
+              <input type="text" name="textfield2" value="{{ ob.Designation }}" />
+            </label>
+          </div></td>
+        </tr>
+        <tr>
+          <td><div align="center">Image</div></td>
+          <td><div align="center">
+            <label>
+              <input type="file" name="file" />
+              {{ ob.image }}
+            </label>
+          </div></td>
+        </tr>
+        <tr>
+          <td><div align="center">Experience</div></td>
+          <td><div align="center">
+            <label>
+              <input type="text" name="textfield3" value="{{ ob.experience }}" />
+            </label>
+          </div></td>
+        </tr>
+        <tr>
+          <td><div align="center">Place</div></td>
+          <td><div align="center">
+            <label>
+              <input type="text" name="textfield4" value="{{ ob.place }}" />
+            </label>
+          </div></td>
+        </tr>
+        <tr>
+          <td><div align="center">Pin</div></td>
+          <td><div align="center">
+            <label>
+              <input type="text" name="textfield5" value="{{ ob.pin }}" required="required" pattern="[0-9]{6}" title="Must contain 6 numbers" />
+            </label>
+          </div></td>
+        </tr>
+        <tr>
+          <td><div align="center">Post</div></td>
+          <td><div align="center">
+            <label>
+              <input type="text" name="textfield6" value="{{ ob.post }}" />
+            </label>
+          </div></td>
+        </tr>
+        <tr>
+          <td><div align="center">Phone</div></td>
+          <td><div align="center">
+            <label>
+              <input type="text" name="textfield7" value="{{ ob.phone }}" required="required" pattern="[6789][0-9]{9}" title="Must have 10 numbers and start with a valid phone number" />
+            </label>
+          </div></td>
+        </tr>
+        <tr>
+          <td colspan="2"><div align="center">
+            <label>
+              <input type="submit" name="Submit" value="Submit" />
+            </label>
+          </div></td>
+        </tr>
+      </table>
+    </div>
+  </form>
+</body>
+</html>
+{% endblock %}
